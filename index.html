@@ -2,9 +2,28 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>My Vue.js!!!!</title>
+    <title>My Vue.js practice</title>
 </head>
 <body>
+<div id = "mycounter">
+  <div v-text="count"></div>
+  <button v-on="click: countUp">Up</button>
+  </div>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+
+<script>
+  var vm = new Vue({
+    el: '#mycounter',
+    data: {
+      count: 0
+    },
+    methods: {
+      countUp: function(){
+        this.count ++;
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
