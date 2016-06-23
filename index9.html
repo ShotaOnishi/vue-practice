@@ -9,7 +9,7 @@
     <input type="text" v-model="keyword">
     <ul>
         <!-- <li v-repeat="users | filterBy 't' in 'name'"> -->
-        <li v-repeat="users | filterBy keyword">
+        <li v-repeat="users | filterBy keyword | orderBy orderkey reverse">
             {{name}} - {{score}}
         </li>
     </ul>
@@ -22,6 +22,8 @@
             el: '#myapp',
             data: {
                 keyword: '',
+                orderkey: 'score',
+                reverse: true,
                 users:[
                     {name: 'taguchi', score: 81},
                     {name: 'fkoji', score: 92},
